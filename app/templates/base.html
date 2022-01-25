@@ -6,11 +6,11 @@
     <title> {{ title }}</title>
     {% else %}
     <title> Welcome to the best Movie Review website </title>
-    {% endif %}
+    {% endif %} {% block styles %}
+    <link href="{{url_for('static', filename='css/index.css')}}" rel="stylesheet" /> {% endblock%}
 </head>
 
-{% block content %} 
-{% endblock%}
+{% block content %} {% endblock%}
 
 <body>
 
