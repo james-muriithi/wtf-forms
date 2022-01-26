@@ -2,6 +2,8 @@ from flask import render_template
 from app import app
 from .forms import ReviewForm
 
+from .request import search_movie
+
 # Views
 
 @app.route('/')
@@ -25,3 +27,14 @@ def review():
 
     return render_template('new_review.html', review_form=form)    
         
+@app.route('/search/<movie_name>')
+
+def search(movie_name):
+    '''
+    View function to display the search results
+    '''
+    movie_name_list = movie_name.split(" ")
+    movie_name_format = "+".join(movie_name_list)
+    searched_movies = search_movie(movie_name_format)
+
+    return render_template('search.html',movies = searched_movies)
