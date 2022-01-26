@@ -32,6 +32,7 @@ def review():
 def search(movie_name):
     '''
     View function to display the search results
+    ['spider' 'man'] spider+man
     '''
     movie_name_list = movie_name.split(" ")
     movie_name_format = "+".join(movie_name_list)
